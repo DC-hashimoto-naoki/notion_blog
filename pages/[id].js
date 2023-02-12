@@ -9,7 +9,7 @@ export const Text = ({ text }) => {
   if (!text) {
     return null;
   }
-  return text.map((value, index) => {
+  return text.map((value) => {
     const {
       annotations: { bold, code, color, italic, strikethrough, underline },
       text,
@@ -24,7 +24,6 @@ export const Text = ({ text }) => {
           underline ? styles.underline : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
-        key={index}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
       </span>
@@ -169,8 +168,6 @@ export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
-
-
   return (
     <div>
       <Head>

@@ -87,14 +87,13 @@ export default function Home({ posts }) {
   );
 }
 
-//ISRを追加
-export const getStaticProps = async() => {
+export const getStaticProps = async () => {
   const database = await getDatabase(databaseId);
 
   return {
     props: {
-      posts: database
+      posts: database,
     },
-    revalidate: 1
-  }
-}
+    revalidate: 1,
+  };
+};
