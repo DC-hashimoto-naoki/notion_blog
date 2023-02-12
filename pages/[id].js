@@ -169,7 +169,6 @@ export default function Post({ page, blocks }) {
   if (!page || !blocks) {
     return <div />;
   }
-  const updated_date = page.properties.updated_date.last_edited_time;
 
 
   return (
@@ -184,7 +183,6 @@ export default function Post({ page, blocks }) {
           <Text text={page.properties.Name.title} />
         </h1>
         <section>
-          {/* <p>{updated_date.substr(0, 10)} 更新</p> */}
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
